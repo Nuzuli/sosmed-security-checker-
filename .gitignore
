@@ -1,0 +1,4 @@
+# File sementara Python
+__pycache__/
+*.pyc
+*.log
