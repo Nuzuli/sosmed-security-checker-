@@ -1,0 +1,5 @@
+[project]
+name = "pemeriksa-keamanan-sosmed"
+version = "1.0.0"
+description = "Cek kekuatan kata sandi media sosial"
+requires-python = ">=3.6"
