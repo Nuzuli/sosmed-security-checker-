@@ -1,4 +1,9 @@
- pytest
+import pytest
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from keamanan_sosmed import cek_kekuatan_sandi
 
 def test_sandi_kosong():
