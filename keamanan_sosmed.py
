@@ -1,4 +1,5 @@
-def cek_kekuatan_sandi(sandi: str) -> str:
+
+ def cek_kekuatan_sandi(sandi: str) -> str:
     if not sandi or len(sandi) < 6:
         return "lemah"
     
@@ -7,8 +8,10 @@ def cek_kekuatan_sandi(sandi: str) -> str:
     punya_simbol = any(not c.isalnum() for c in sandi)
     
     skor = sum([punya_huruf, punya_angka, punya_simbol])
+    
     if len(sandi) >= 10:
-        skor += 1
+
+ skor += 1
     
     if skor <= 2:
         return "lemah"
@@ -16,137 +19,4 @@ def cek_kekuatan_sandi(sandi: str) -> str:
         return "sedang"
     else:
         return "kuat"
-# ==========================================
-# NAMA PROYEK: Sosmed Security Checker
-# VERSI: 1.0
-# DESKRIPSI: Alat cek keamanan akun media sosial
-# ==========================================
-
-import re
-import sys
-
-def cek_kekuatan_sandi(sandi):
-    skor = 0
-    saran = []
-    
-    if len(sandi) >= 12:
-        skor += 2
-    elif len(sandi) >= 8:
-        skor += 1
-        saran.append("⚠️ Disarankan sandi minimal 12 karakter")
-    else:
-        saran.append("❌ Sandi terlalu pendek! Minimal 8 karakter")
-    
-    if re.search(r"[A-Z]", sandi):
-        skor += 1
-    else:
-        saran.append("❌ Tambahkan huruf besar (A-Z)")
-    
-    if re.search(r"[a-z]", sandi):
-        skor += 1
-    else:
-        saran.append("❌ Tambahkan huruf kecil (a-z)")
-    
-    if re.search(r"[0-9]", sandi):
-        skor += 1
-    else:
-        saran.append("❌ Tambahkan angka (0-9)")
-    
-    if re.search(r"[!@#$%^&*()_+\-=\[\]{};:'\"\\|,.<>\/?]", sandi):
-        skor += 1
-    else:
-        saran.append("⚠️ Tambahkan karakter khusus seperti !@#$%")
-    
-    return skor, saran
-
-def tampilkan_tips_keamanan():
-    print("\n" + "=" * 50)
-    print("📌 TIPS KEAMANAN AKUN SOSMED")
-    print("=" * 50)
-    tips = [
-        "✅ Aktifkan Verifikasi 2 Langkah (2FA)",
-        "✅ Gunakan sandi unik untuk setiap akun",
-        "✅ Jangan bagikan sandi kepada siapapun",
-        "✅ Periksa riwayat login secara berkala",
-        "✅ Hati-hati terhadap tautan mencurigakan",
-        "✅ Perbarui info pemulihan akun secara rutin"
-    ]
-    for nomor, isi in enumerate(tips, 1):
-        print(f"  {nomor}. {isi}")
-    print("=" * 50)
-
-def main():
-    print("\n" + "=" * 50)
-    print("🛡️  SOSMED SECURITY CHECKER — v1.0")
-    print("=" * 50)
-    
-    while True:
-        print("\n📋 MENU UTAMA")
-        print("1. Cek Kekuatan Kata Sandi")
-        print("2. Lihat Tips Keamanan")
-        print("3. Keluar")
-        
-        pilihan = input("\nPilih menu (1-3): ")
-        
-        if pilihan == "1":
-            print("\n--- CEK KEKUATAN SANDI ---")
-            sandi = input("Masukkan sandi yang ingin dicek: ")
-            
-            if not sandi:
-                print("❌ Silakan masukkan sandi!")
-                continue
-            
-            skor, saran = cek_kekuatan_sandi(sandi)
-            
-            print(f"\n📊 Hasil Pengecekan:")
-            print(f"   Skor: {skor}/7")
-            
-            if skor >= 6:
-                print("   🟢 Sangat Aman! Bagus sekali!")
-            elif skor >= 4:
-                print("   🟡 Cukup Aman, bisa ditingkatkan")
-            else:
-                print("   🔴 Kurang Aman, sebaiknya diperbaiki")
-            
-            if saran:
-                print("\n💡 Saran Perbaikan:")
-                for s in saran:
-                    print(f"   {s}")
-        
-        elif pilihan == "2":
-            tampilkan_tips_keamanan()
-        
-        elif pilihan == "3":
-            print("\n👋 Terima kasih! Tetap jaga keamanan ya!\n")
-            sys.exit(0)
-        
-        else:
-            print("❌ Pilihan tidak valid, silakan pilih 1-3")
-
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\n\n👋 Program dihentikan. Sampai jumpa!\n")
-
-def cek_kata_sandi(sandi):
-    skor = 0
-    if len(sandi) >= 8:
-        skor += 1
-    if any(c.islower() for c in sandi):
-        skor += 1
-    if any(c.isupper() for c in sandi):
-        skor += 1
-    if any(c.isdigit() for c in sandi):
-        skor += 1
-    return skor
-
-if __name__ == "__main__":
-    sandi = input("Masukkan kata sandi: ")
-    hasil = cek_kata_sandi(sandi)
-    print(f"Skor keamanan: {hasil}/4")
-    if hasil < 3:
-        print("Kata sandi masih lemah, perbaiki ya!")
-    else:
-        print("Kata sandi cukup kuat!")
-
+      
