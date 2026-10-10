@@ -35,6 +35,28 @@ Program sederhana untuk memeriksa kekuatan kata sandi akun media sosial.
 - Mendeteksi kombinasi huruf, angka, dan simbol
 - Memberikan saran perbaikan
 
+## Struktur Proyek
+sosmed-security-checker/
+├── keamanan_sosmed.py
+├── requirements.txt
+├── pyproject.toml
+├── README.md
+└── tests/
+    └── test_keamanan_sosmed.py
+
+## Cara Menggunakan
+1. Jalankan perintah: `python keamanan_sosmed.py`
+2. Masukkan kata sandi yang ingin diperiksa
+3. Lihat hasil penilaian keamanan
+
+## Menjalankan Tes
+` ``bash
+pytest tests/ -v
+` ``
+
+
+
+
 ## Penulis
 Nuzuli
 
