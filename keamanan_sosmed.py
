@@ -1,3 +1,21 @@
+def cek_kekuatan_sandi(sandi: str) -> str:
+    if not sandi or len(sandi) < 6:
+        return "lemah"
+    
+    punya_huruf = any(c.isalpha() for c in sandi)
+    punya_angka = any(c.isdigit() for c in sandi)
+    punya_simbol = any(not c.isalnum() for c in sandi)
+    
+    skor = sum([punya_huruf, punya_angka, punya_simbol])
+    if len(sandi) >= 10:
+        skor += 1
+    
+    if skor <= 2:
+        return "lemah"
+    elif skor == 3:
+        return "sedang"
+    else:
+        return "kuat"
 # ==========================================
 # NAMA PROYEK: Sosmed Security Checker
 # VERSI: 1.0
