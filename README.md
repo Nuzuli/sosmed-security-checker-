@@ -21,3 +21,21 @@ Aplikasi sederhana dan mudah digunakan untuk mengecek kekuatan kata sandi serta 
    ```bash
    python keamanan_sosmed.py
 
+# Pemeriksa Keamanan Sosmed
+
+Program sederhana untuk memeriksa kekuatan kata sandi akun media sosial.
+
+## Cara Pakai
+1. Jalankan program: python keamanan_sosmed.py
+2. Masukkan kata sandi yang ingin diperiksa
+3. Program akan menampilkan seberapa kuat kata sandi tersebut
+
+## Fitur
+- Memeriksa panjang kata sandi
+- Mendeteksi kombinasi huruf, angka, dan simbol
+- Memberikan saran perbaikan
+
+## Penulis
+Nuzuli
+
+
