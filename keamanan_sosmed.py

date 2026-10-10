@@ -110,3 +110,25 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         print("\n\n👋 Program dihentikan. Sampai jumpa!\n")
+
+def cek_kata_sandi(sandi):
+    skor = 0
+    if len(sandi) >= 8:
+        skor += 1
+    if any(c.islower() for c in sandi):
+        skor += 1
+    if any(c.isupper() for c in sandi):
+        skor += 1
+    if any(c.isdigit() for c in sandi):
+        skor += 1
+    return skor
+
+if __name__ == "__main__":
+    sandi = input("Masukkan kata sandi: ")
+    hasil = cek_kata_sandi(sandi)
+    print(f"Skor keamanan: {hasil}/4")
+    if hasil < 3:
+        print("Kata sandi masih lemah, perbaiki ya!")
+    else:
+        print("Kata sandi cukup kuat!")
+
